@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do |blog|
   Blog.create!(
-          title: "My Blig Post #{blog}",
+          title: "My Blog Post #{blog}",
           body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                  when an unknown printer took a galley of type and scrambled it to make a type
@@ -20,8 +20,18 @@
 end
 
 5.times do |skill|
-  Skill.create(
+  Skill.create!(
            title: "Ruby on Rails #{skill}",
            percentage: 20
+  )
+end
+
+9.times do |portfolio_item|
+  Portfolio.create(
+               title: "Portfolio title #{portfolio_item}",
+               subtitle: "some random subtitle of #{portfolio_item}",
+               body: "Lorem ipsum dolor etc etc",
+               main_image:"http://via.placeholder.com/600x400",
+               thumb_image: "http://via.placeholder.com/350x150"
   )
 end
