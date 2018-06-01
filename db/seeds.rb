@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+3.times do |topic|
+  Topic.create!(
+           title: "Topic #{topic}"
+  )
+end
 10.times do |blog|
   Blog.create!(
           title: "My Blog Post #{blog}",
@@ -15,7 +20,8 @@
                  into electronic typesetting, remaining essentially unchanged.
                  It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                  passages, and more recently with desktop publishing software like Aldus PageMaker
-                 including versions of Lorem Ipsum"
+                 including versions of Lorem Ipsum",
+          topic_id: Topic.last.id
           )
 end
 
@@ -26,12 +32,24 @@ end
   )
 end
 
-9.times do |portfolio_item|
+8.times do |portfolio_item|
   Portfolio.create(
                title: "Portfolio title #{portfolio_item}",
-               subtitle: "some random subtitle of #{portfolio_item}",
+               subtitle: "Ruby on Rails",
                body: "Lorem ipsum dolor etc etc",
                main_image:"http://via.placeholder.com/600x400",
                thumb_image: "http://via.placeholder.com/350x150"
   )
 end
+
+1.times do |portfolio_item|
+  Portfolio.create(
+      title: "Portfolio title #{portfolio_item}",
+      subtitle: "React JS",
+      body: "Lorem ipsum dolor etc etc",
+      main_image:"http://via.placeholder.com/600x400",
+      thumb_image: "http://via.placeholder.com/350x150"
+  )
+end
+
+puts "9 items created"
